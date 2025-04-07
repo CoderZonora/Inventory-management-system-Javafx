@@ -1,22 +1,29 @@
-.login-bg{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
+.login-bg {
+  /* Background gradient updated for a cohesive blue tone */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
 }
 
-.textfield-design{
--fx-background-color:transparent;
--fx-border-radius:5px;
--fx-border-color: linear-gradient(to bottom right , #2f466b, #662d60);
--fx-text-inner-color:#000;
+.textfield-design {
+  /* Transparent background with soft blue border */
+  -fx-background-color: transparent;
+  -fx-border-radius: 5px;
+  -fx-border-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-text-inner-color: #000000;
 }
 
-.login-button{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-background-radius:20px;
--fx-cursor:hand;
+.login-button {
+  /* Button gradient matching navbar and other button styles */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-background-radius: 20px;
+  -fx-cursor: hand;
+  -fx-text-fill: #ffffff;
+  -fx-font-weight: bold;
 }
 
-.close{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-background-radius:3px;
--fx-cursor:hand;
+.close {
+  /* Close button gradient with consistent styling */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-background-radius: 3px;
+  -fx-cursor: hand;
+  -fx-text-fill: #ffffff;
 }

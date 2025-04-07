@@ -37,7 +37,7 @@
                         <Font name="Arial Black" size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="sales_btn" layoutX="39.0" layoutY="396.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="SALES" textFill="WHITE">
+                  <Button fx:id="sales_btn" layoutX="39.0" layoutY="353.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="SALES" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="1.2em" />
                      </graphic>
                   </Button>
-                  <Button fx:id="billing_btn" layoutX="39.0" layoutY="310.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="BILLING" textFill="WHITE">
+                  <Button fx:id="billing_btn" layoutX="39.0" layoutY="440.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="BILLING" textFill="WHITE" visible="false">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -53,7 +53,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="CLIPBOARD" size="1.2em" text="" />
                      </graphic>
                   </Button>
-                  <Button fx:id="purchase_btn" layoutX="39.0" layoutY="440.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="PURCHASE" textFill="WHITE">
+                  <Button fx:id="employee_btn" layoutX="39.0" layoutY="396.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="EMPLOYEE" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -61,7 +61,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_BAG" size="1.2em" />
                      </graphic>
                   </Button>
-                  <Button fx:id="customer_btn" layoutX="39.0" layoutY="353.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="CUSTOMER" textFill="WHITE">
+                  <Button fx:id="customer_btn" layoutX="39.0" layoutY="310.0" mnemonicParsing="false" onAction="#activateDashboard" onMouseClicked="#activateAnchorPane" prefWidth="200.0" styleClass="navbutton" stylesheets="@dashboard.css" text="CUSTOMER" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -87,7 +87,7 @@
                   </Button>
                   <AnchorPane layoutX="-2.0" prefHeight="47.0" prefWidth="741.0">
                      <children>
-                        <Label layoutX="26.0" layoutY="4.0" prefHeight="42.0" prefWidth="530.0" text="FASHION CLUB MANAGEMENT SYSTEM">
+                        <Label layoutX="26.0" layoutY="4.0" prefHeight="42.0" prefWidth="530.0" text="Manipal Shop Management System">
                            <font>
                               <Font name="Cooper Black" size="24.0" />
                            </font>
@@ -182,7 +182,7 @@
                            </children>
                         </Pane>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="billing_pane" layoutX="-1.0" layoutY="55.0" prefHeight="639.0" prefWidth="820.0" stylesheets="@dashboard.css">
+                  <AnchorPane fx:id="billing_pane" layoutX="-1.0" layoutY="55.0" prefHeight="639.0" prefWidth="820.0" stylesheets="@dashboard.css" visible="false" managed="false">
                      <children>
                         <TableView fx:id="billing_table" layoutX="13.0" layoutY="59.0" onMouseClicked="#selectBillingTableData" prefHeight="280.0" prefWidth="794.0" stylesheets="@dashboard.css">
                           <columns>
@@ -346,6 +346,59 @@
                            </graphic>
                         </Button>
                      </children></AnchorPane>
+                  <AnchorPane fx:id="employee_pane" layoutX="-1.0" layoutY="55.0" prefHeight="639.0" prefWidth="820.0" visible="false">
+                     <children>
+                        <TableView fx:id="employee_table" layoutX="13.0" layoutY="159.0" onMouseClicked="#selectEmployeeTableData" prefHeight="474.0" prefWidth="794.0" stylesheets="@dashboard.css">
+                              <columns>
+                                 <TableColumn fx:id="emp_col_id" prefWidth="196.79998779296875" text="Id" />
+                                 <TableColumn fx:id="emp_col_name" prefWidth="307.20001220703125" text="Name" />
+                                 <TableColumn fx:id="emp_col_phone" prefWidth="288.00006103515625" text="Phone Number" />
+                              </columns>
+                        </TableView>
+                        
+                        <Button fx:id="emp_btn_add" layoutX="736.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#addEmployeeData" prefHeight="32.0" prefWidth="50.0" styleClass="add" stylesheets="@dashboard.css">
+                              <graphic>
+                                 <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="18.0" />
+                              </graphic>
+                        </Button>
+                        
+                        <Button fx:id="emp_btn_edit" layoutX="679.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#updateEmployeeData" prefHeight="32.0" prefWidth="50.0" styleClass="refresh" stylesheets="@dashboard.css">
+                              <graphic>
+                                 <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="18.0" />
+                              </graphic>
+                        </Button>
+                        
+                        <Button fx:id="emp_btn_delete" layoutX="620.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#deleteEmployeeData" prefHeight="32.0" prefWidth="50.0" styleClass="delete" stylesheets="@dashboard.css">
+                              <graphic>
+                                 <FontAwesomeIconView fill="WHITE" glyphName="MINUS_CIRCLE" size="18.0" wrappingWidth="13.485666275024414" />
+                              </graphic>
+                        </Button>
+                        
+                        <TextField fx:id="employee_search" layoutX="14.0" layoutY="25.0" prefHeight="32.0" prefWidth="230.0" promptText="Search" styleClass="search-billing" stylesheets="@dashboard.css" />
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="21.0" layoutY="46.0" size="16" />
+                        
+                        <TextField fx:id="emp_field_name" layoutX="113.0" layoutY="94.0" prefHeight="32.0" prefWidth="206.0" styleClass="textfield" stylesheets="@dashboard.css" />
+                        <TextField fx:id="emp_field_phone" layoutX="487.0" layoutY="93.0" prefHeight="32.0" prefWidth="200.0" styleClass="textfield" stylesheets="@dashboard.css" />
+                        
+                        <Label layoutX="36.0" layoutY="94.0" prefHeight="32.0" prefWidth="65.0" text="Name :">
+                              <font>
+                                 <Font name="Dubai Bold" size="15.0" />
+                              </font>
+                        </Label>
+                        
+                        <Label layoutX="361.0" layoutY="94.0" prefHeight="32.0" prefWidth="122.0" text="Phone Number :">
+                              <font>
+                                 <Font name="Dubai Bold" size="15.0" />
+                              </font>
+                        </Label>
+                        
+                        <Button fx:id="emp_btn_print" layoutX="562.0" layoutY="32.0" mnemonicParsing="false" onAction="#printEmployeeDetails" prefHeight="32.0" prefWidth="50.0" styleClass="add" stylesheets="@dashboard.css">
+                              <graphic>
+                                 <FontAwesomeIconView fx:id="employee_print" fill="WHITE" glyphName="PRINT" size="18.0" />
+                              </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane fx:id="sales_pane" layoutY="55.0" prefHeight="639.0" prefWidth="820.0" visible="false">
                      <children>
                         <TableView fx:id="sales_table" layoutX="13.0" layoutY="74.0" onMouseClicked="#selectCustomerTableData" prefHeight="558.0" prefWidth="794.0" stylesheets="@dashboard.css">

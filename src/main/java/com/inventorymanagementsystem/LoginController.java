@@ -64,7 +64,7 @@ public class LoginController implements Initializable {
     }
 
     public void dropShowAffect(){
-        DropShadow original=new DropShadow(20, Color.valueOf("#ae44a5"));
+        DropShadow original=new DropShadow(20, Color.valueOf("#2c7fd1"));
         f_logo.setEffect(original);
         c_logo.setEffect(original);
     }

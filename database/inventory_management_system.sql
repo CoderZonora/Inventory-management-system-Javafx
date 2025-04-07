@@ -9,6 +9,28 @@
 -- Database: `inventory_management_system`
 -- --------------------------------------------------------
 
+-- Table structure for table `month_names`
+CREATE TABLE `month_names` (
+    `month_number` INTEGER PRIMARY KEY,
+    `month_name` TEXT NOT NULL UNIQUE
+);
+
+-- Insert month names and their corresponding numbers
+INSERT INTO `month_names` (`month_number`, `month_name`) VALUES
+(1, 'JANUARY'),
+(2, 'FEBRUARY'),
+(3, 'MARCH'),
+(4, 'APRIL'),
+(5, 'MAY'),
+(6, 'JUNE'),
+(7, 'JULY'),
+(8, 'AUGUST'),
+(9, 'SEPTEMBER'),
+(10, 'OCTOBER'),
+(11, 'NOVEMBER'),
+(12, 'DECEMBER');
+
+
 -- Table structure for table `billing`
 CREATE TABLE `billing` (
     `item_number` TEXT NOT NULL,
@@ -27,9 +49,22 @@ CREATE TABLE `customers` (
 
 -- Dumping data for table `customers`
 INSERT INTO `customers` (`id`, `Name`, `PhoneNumber`) VALUES
-(24, 'Shahzaib', '7070564601'),
-(23, 'Rashid Makki', '7070564603'),
-(25, 'Shadab', '9818977363');
+(1, 'Aman', '7070564601'),
+(2, 'Anikaith', '7070564603'),
+(3, 'Abhishek', '9818977363');
+
+-- Table structure for table `employees`
+CREATE TABLE `employees` (
+    `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+    `Name` TEXT NOT NULL,
+    `PhoneNumber` TEXT NOT NULL UNIQUE
+);
+
+-- Dumping data for table `employees`
+INSERT INTO `employees` (`id`, `Name`, `PhoneNumber`) VALUES
+(1, 'Lorem', '9293323232'),
+(2, 'Ipsum', '9039203203'),
+(3, 'Dolor', '9818977363');
 
 -- Table structure for table `inv_seq`
 CREATE TABLE `inv_seq` (
@@ -98,7 +133,9 @@ INSERT INTO `sales` (`id`, `inv_num`, `cust_id`, `price`, `quantity`, `total_amo
 (31, 'INV-3', 25, 900.00, 2, 1800.00, '2023-06-03', 'AX123456'),
 (32, 'INV-3', 25, 800.00, 1, 800.00, '2023-06-03', 'ZX123456'),
 (33, 'INV-4', 23, 700.00, 2, 1400.00, '2023-06-04', 'AX123456'),
-(34, 'INV-5', 23, 300.00, 2, 600.00, '2023-06-04', 'BX123456');
+(34, 'INV-5', 23, 300.00, 2, 600.00, '2023-06-04', 'BX123456'),
+(35, 'INV-6', 23, 700.00, 3, 2100.00, '2024-11-05', 'AX123456'),
+(36, 'INV-7', 24, 800.00, 1, 800.00, '2024-11-05', 'ZX123456');
 
 -- Table structure for table `users`
 CREATE TABLE `users` (
@@ -110,3 +147,4 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
+

@@ -1,82 +1,106 @@
-.navbar{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
+.navbar {
+  /* Updated gradient for the navbar for a cohesive blue theme */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
 }
 
-.close,.add,.save,.clear,.delete,.refresh,.print{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-background-radius:3px;
--fx-cursor:hand;
--fx-text-fill:#fff;
+.close,
+.add,
+.save,
+.clear,
+.delete,
+.refresh,
+.print {
+  /* Buttons with consistent blue gradient and white text */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-background-radius: 3px;
+  -fx-cursor: hand;
+  -fx-text-fill: #ffffff;
 }
 
-.navbutton{
--fx-background-color:linear-gradient(to bottom right , rgba(121,172,255,0.2),  rgba(255,106,239,0.2));
--fx-cursor:hand;
--fx-alignment:CENTER-LEFT;
+.navbutton {
+  /* Updated button gradient with light effects */
+  -fx-background-color: linear-gradient(
+    to bottom right,
+    rgba(121, 172, 255, 0.2),
+    rgba(255, 106, 239, 0.2)
+  );
+  -fx-cursor: hand;
+  -fx-alignment: CENTER-LEFT;
 }
 
-.navbutton:hover{
--fx-background-color:linear-gradient(to bottom right , rgba(121,172,255,0.7),  rgba(255,106,239,0.7));
+.navbutton:hover {
+  /* Darker hover effect for nav buttons */
+  -fx-background-color: linear-gradient(
+    to bottom right,
+    rgba(121, 172, 255, 0.7),
+    rgba(255, 106, 239, 0.7)
+  );
 }
 
-.dasboard_box{
--fx-background-color:linear-gradient(to bottom left , #2f466b, #662d60);
--fx-background-radius:30px;
+.dasboard_box {
+  /* Dashboard box gradient for a soft blue appearance */
+  -fx-background-color: linear-gradient(to bottom left, #2f466b, #1a3a5d);
+  -fx-background-radius: 30px;
 }
-
 
 /* Billing Pane */
-.table-view{
--fx-background-color:transparent;
--fx-border-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-border-radius:8px;
--fx-padding:0px
+.table-view {
+  /* Transparent background with blue border */
+  -fx-background-color: transparent;
+  -fx-border-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-border-radius: 8px;
+  -fx-padding: 0px;
 }
 
-.table-view .table-column{
--fx-alignment:CENTER;
-}
-.table-view .column-header-background{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-background-insets:0 0 0 0;
--fx-background-radius: 8px 8px 0px 0px;
+.table-view .table-column {
+  -fx-alignment: CENTER;
 }
 
-.table-view .column-header,.filter{
--fx-background-color:transparent;
--fx-size:40;
+.table-view .column-header-background {
+  /* Column header background with blue gradient */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-background-insets: 0 0 0 0;
+  -fx-background-radius: 8px 8px 0px 0px;
 }
 
-.table-view .column-header .label{
- -fx-text-fill:#fff;
- -fx-font-family:"Arial"
+.table-view .column-header,
+.filter {
+  -fx-background-color: transparent;
+  -fx-size: 40;
 }
 
-.textfield{
--fx-background-color:linear-gradient(to bottom,#efefef,#eee);
--fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
--fx-border-width:.8px;
--fx-font-family:"Tahoma";
--fx-border-radius:4px;
+.table-view .column-header .label {
+  -fx-text-fill: #ffffff;
+  -fx-font-family: "Arial";
 }
 
-.textfield:focused{
--fx-border-width:1.8px;
--fx-background-color:#fff;
+.textfield {
+  /* Text field background updated for a softer look with a blue border */
+  -fx-background-color: linear-gradient(to bottom, #efefef, #eeeeee);
+  -fx-border-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-border-width: 0.8px;
+  -fx-font-family: "Tahoma";
+  -fx-border-radius: 4px;
 }
 
-.search-billing{
--fx-background-color:transparent;
--fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
--fx-border-radius:4px;
--fx-font-size:13px;
--fx-font-family:"Arial";
--fx-border-width:1px;
--fx-padding: 0px 0px 0px 28px;
+.textfield:focused {
+  /* Focus state for text field */
+  -fx-border-width: 1.8px;
+  -fx-background-color: #ffffff;
 }
 
-.search-billing:focused{
--fx-border-width:2px;
+.search-billing {
+  /* Search billing input with transparent background and blue border */
+  -fx-background-color: transparent;
+  -fx-border-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-border-radius: 4px;
+  -fx-font-size: 13px;
+  -fx-font-family: "Arial";
+  -fx-border-width: 1px;
+  -fx-padding: 0px 0px 0px 28px;
 }
 
-
+.search-billing:focused {
+  /* Focus state for search billing input */
+  -fx-border-width: 2px;
+}

@@ -1,24 +1,30 @@
-.close,.print{
--fx-background-color:linear-gradient(to bottom right , #2f466b, #662d60);
--fx-background-radius:5px;
--fx-cursor:hand;
--fx-text-fill:#fff;
+.close,
+.print {
+  /* Background gradient adjusted to blue theme */
+  -fx-background-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-background-radius: 5px;
+  -fx-cursor: hand;
+  -fx-text-fill: #ffffff;
 }
 
-.textfield{
--fx-background-color:linear-gradient(to bottom,#efefef,#eee);
--fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
--fx-border-width:.8px;
--fx-font-family:"Tahoma";
--fx-border-radius:4px;
+.textfield {
+  /* Subtle gradient with a blue-tinted border for the textfield */
+  -fx-background-color: linear-gradient(to bottom, #f2f6fb, #e3ebf7);
+  -fx-border-color: linear-gradient(to bottom right, #2f466b, #1a3a5d);
+  -fx-border-width: 0.8px;
+  -fx-font-family: "Tahoma";
+  -fx-border-radius: 4px;
 }
 
-.textfield:focused{
--fx-border-width:1.8px;
--fx-background-color:#fff;
+.textfield:focused {
+  /* Enhanced border on focus to stand out */
+  -fx-border-width: 1.8px;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #2f466b;
 }
 
-.billsanchorpane{
--fx-border-width:2px;
--fx-border-color:#000;
+.billsanchorpane {
+  /* Border color updated to blue theme */
+  -fx-border-width: 2px;
+  -fx-border-color: #2f466b;
 }

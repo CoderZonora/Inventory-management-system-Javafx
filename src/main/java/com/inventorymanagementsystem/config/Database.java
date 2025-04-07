@@ -1,5 +1,4 @@
 package com.inventorymanagementsystem.config;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -15,6 +14,8 @@ public class Database {
     private static Database database = new Database();
     private static final String DB_URL = "jdbc:sqlite:inventory_management_system.db";
     private static final String SCHEMA_FILE = "database/inventory_management_system.sql";
+    private static Connection globalConnection;
+    private static final Object lock = new Object();
 
     private Database() {
         // Private constructor for singleton
@@ -25,21 +26,30 @@ public class Database {
     }
 
     public Connection connectDB() {
-        try {
-            // Load SQLite driver
-            Class.forName("org.sqlite.JDBC");
-            
-            // Create the database file if it doesn't exist
-            Connection conn = DriverManager.getConnection(DB_URL);
-            
-            // Check if tables exist, if not initialize the database
-            if (!tablesExist(conn)) {
-                initializeDatabase(conn);
+        synchronized (lock) {
+            try {
+                if (globalConnection == null || globalConnection.isClosed()) {
+                    // Load SQLite driver
+                    Class.forName("org.sqlite.JDBC");
+                    
+                    // Create the database file if it doesn't exist
+                    globalConnection = DriverManager.getConnection(DB_URL);
+                    
+                    // Enable WAL mode and set busy timeout for better concurrent access
+                    try (Statement stmt = globalConnection.createStatement()) {
+                        stmt.execute("PRAGMA journal_mode=WAL");
+                        stmt.execute("PRAGMA busy_timeout=30000");
+                    }
+                    
+                    // Check if tables exist, if not initialize the database
+                    if (!tablesExist(globalConnection)) {
+                        initializeDatabase(globalConnection);
+                    }
+                }
+                return globalConnection;
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to connect to the database", e);
             }
-            
-            return conn;
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to connect to the database", e);
         }
     }
 
@@ -100,12 +110,26 @@ public class Database {
 
     // Method to check if database needs to be initialized
     public void checkAndInitializeDatabase() {
-        try (Connection conn = connectDB()) {
-            if (!tablesExist(conn)) {
-                initializeDatabase(conn);
+        try (Connection tempConn = DriverManager.getConnection(DB_URL)) {
+            if (!tablesExist(tempConn)) {
+                initializeDatabase(tempConn);
             }
         } catch (SQLException e) {
             throw new RuntimeException("Failed to initialize database", e);
+        }
+    }
+
+    // Add this method to properly close the connection when the application shuts down
+    public void closeConnection() {
+        synchronized (lock) {
+            try {
+                if (globalConnection != null && !globalConnection.isClosed()) {
+                    globalConnection.close();
+                    globalConnection = null;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
