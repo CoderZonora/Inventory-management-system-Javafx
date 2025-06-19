@@ -46,11 +46,3 @@ This project is a complete JavaFX-based desktop application showcasing OOP princ
 - SceneBuilder
 - OOP Design Principles
 
----
-
-##  Author
-
-Made as part of my OOPS coursework in first year.
-
----
-
